@@ -1,0 +1,34 @@
+== Welcome to TestInternals
+
+TestInternals patches Test::Unit::TestCase to allow testing of private methods,
+as well as variables.
+
+The stack trace is also available, including the ability to check
+that specific parameter values were sent to a method.
+
+It will also prevent the application from stopping tests if exit is called.
+assert_alive and assert_dead have been included to assist in testing.
+
+There are also a number of assertions that have been added.
+
+== Getting Started
+
+1. Install TestInternals at the command prompt if you haven't yet:
+
+    gem install test_internals
+
+2. Require the gem in your gemfile:
+
+    gem 'test_internals', '~> 0.0.1'
+
+3. Require the gem wherever you need shell commands:
+
+    require 'test_internals'
+
+== Additional Documentation
+
+ rake rdoc:app
+
+== License
+
+TestInternals is released under the GPLv3 license.
