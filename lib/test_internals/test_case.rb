@@ -159,7 +159,7 @@ Test::Unit::TestCase.class_eval do
     [
       :public_instance_methods,
       :protected_instance_methods,
-      :private_instance_methods
+      :private_instance_methods,
     ].each do |method_id|
 
       scope = method_id.to_s.gsub(/_.*/, '')
