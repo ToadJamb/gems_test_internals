@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'test_internals'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
 
   s.summary     = 'Allows tests to check the stack trace, ' +
     'parameters, private methods, and class variables.'
@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.files = Dir['lib/**/*.rb', '*']
   s.test_files = Dir['test/**/*.rb']
+
+  s.add_dependency 'app_mode', '~> 0.0.1'
 
   s.add_development_dependency 'rake_tasks', '~> 0.0.1'
 
