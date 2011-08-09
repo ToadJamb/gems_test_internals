@@ -36,7 +36,8 @@
 module Kernel
   # Patch exit so that it sets a flag rather than ends the application.
   # (A call to exit will cause testing to stop otherwise).
-  def exit(*args)
+  def exit(status = true)
     TestInternals::AppState.state = :dead
+    return status
   end
 end
