@@ -1,14 +1,14 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    app_mode (0.0.2)
+    app_mode (1.0.1)
     rake (0.8.7)
-    rake_tasks (0.0.1)
+    rake_tasks (0.0.4)
       rake (~> 0.8.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  app_mode (~> 0.0.1)
+  app_mode (~> 1.0.0)
   rake_tasks (~> 0.0.1)

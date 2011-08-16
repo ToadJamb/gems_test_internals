@@ -1,5 +1,4 @@
-# This file contains the constant that is used to determine whether the
-# application is still running or not.
+# This file contains the main part of the module for this gem.
 
 #--
 ################################################################################
@@ -33,7 +32,8 @@
 ################################################################################
 #++
 
+# Main module for this gem.
 module TestInternals
-  # This constant is used to track whether the application is still running.
-  AppState = AppMode.new(:alive, [:alive, :dead])
+  # This constant is used to indicate whether the application has been stopped.
+  AppState = StateManager.new(:alive, [:alive, :dead])
 end

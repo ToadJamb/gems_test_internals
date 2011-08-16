@@ -1,15 +1,9 @@
 == Welcome to TestInternals
 
-TestInternals patches Test::Unit::TestCase to allow testing of private methods,
-as well as variables.
-
-The stack trace is also available, including the ability to check
-that specific parameter values were sent to a method.
-
-It will also prevent the application from stopping tests if exit is called.
-assert_alive and assert_dead have been included to assist in testing.
-
-There are also a number of assertions that have been added.
+TestInternals patches Test::Unit::TestCase to allow
+testing of private methods, as well as variables. The stack trace
+is also available, including the ability to check that specific
+parameters were sent to a method. This results in cotton candy goodness for all.
 
 == Getting Started
 
@@ -17,13 +11,67 @@ There are also a number of assertions that have been added.
 
     gem install test_internals
 
-2. Require the gem in your gemfile:
+2. Require the gem in your Gemfile:
 
-    gem 'test_internals', '~> 0.0.1'
+    gem 'test_internals', '~> 1.0.0'
 
-3. Require the gem wherever you need shell commands:
+3. Require the gem wherever you need to use it:
 
     require 'test_internals'
+
+== Overriding Default Behavior
+
+To call methods that enable functionality or to override
+variable settings, add an initialize method to your test
+and call the desired method, calling super after:
+
+ def initialize
+   expose_all_variables
+   expose_stack
+   expose_class_methods
+   expose_instance_methods
+   @class = MyClass
+   init_object(param1, param2, ...)
+   # ...
+   super
+ end
+
+NOTE: If it is not included in this example,
+it is not expected to be used in the initialize method.
+
+== Instance Variables
+
+=== @class
+
+The @class variable, will exist for every test.
+The class is inferred from the name of the test.
+For example, a class named MyClass
+is expected to be tested by a class named MyClassTest.
+
+The default behavior may be overridden by specifying the class
+in the initialize method of your test as shown above.
+
+=== @obj
+
+This is only non-nil if init_object has been called in the initialize method
+(and the class responds to the :new method).
+See rdoc for additional details.
+
+== Additional Notes
+
+* Methods marked protected are intended to be used by sub-classes.
+
+* Methods marked private are intended to be used only by the class itself
+  and are NOT intended for use in sub-classes.
+  If they are, results may be unpredictable.
+
+* When send_to_class or send_to_object are called, the calls are wrapped such
+  that output is captured and not sent to the console.
+  The output may be retrieved via the following methods:
+
+   out        #=> output to stdout
+   err        #=> output to stderr
+   real_finis #=> An array [out, err]
 
 == Additional Documentation
 
