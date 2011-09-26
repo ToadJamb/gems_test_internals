@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'test_internals'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
 
   s.summary     = 'Allows tests to check the stack trace, ' +
     'parameters, private methods, and class variables.'
@@ -16,7 +16,7 @@ parameters were sent to a method. This results in cotton candy goodness for all.
   s.email    = 'tthetoad@gmail.com'
   s.homepage = 'http://www.bitbucket.org/ToadJamb/gems_test_internals'
 
-  s.license = 'GPLv3'
+  s.license = 'LGPLv3'
 
   s.extra_rdoc_files << 'README'
 
