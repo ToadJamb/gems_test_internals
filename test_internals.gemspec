@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'test_internals'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
 
   s.summary     = 'Allows tests to check the stack trace, ' +
     'parameters, private methods, and class variables.'
@@ -26,7 +26,7 @@ parameters were sent to a method. This results in cotton candy goodness for all.
 
   s.add_dependency 'app_mode', '~> 1.0.0'
 
-  s.add_development_dependency 'rake_tasks', '~> 0.0.1'
+  s.add_development_dependency 'rake_tasks', '~> 1.0.0'
 
   s.has_rdoc = true
 end
