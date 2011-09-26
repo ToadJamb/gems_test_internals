@@ -216,7 +216,7 @@ Test::Unit::TestCase.class_eval do
   def send_to_object(method, *args)
     create(*args)
     assert_alive
-    return send_to(@obj, method.to_sym, *args)
+    return send_to(@obj, method.to_sym)
   end
 
   ############################################################################
