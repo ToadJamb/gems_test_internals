@@ -1,2 +1,1 @@
-require 'bundler'
-Bundler.require :rake
+require 'rake_tasks'

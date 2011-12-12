@@ -26,7 +26,7 @@ parameters were sent to a method. This results in cotton candy goodness for all.
 
   s.add_dependency 'app_mode', '~> 1.0.0'
 
-  s.add_development_dependency 'rake_tasks', '~> 1.0.0'
+  s.add_development_dependency 'rake_tasks', '~> 2.0.0'
 
   s.has_rdoc = true
 end
