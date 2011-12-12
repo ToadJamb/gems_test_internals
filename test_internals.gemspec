@@ -21,7 +21,7 @@ parameters were sent to a method. This results in cotton candy goodness for all.
   s.extra_rdoc_files << 'README'
 
   s.require_paths = ['lib']
-  s.files = Dir['lib/**/*.rb', '*']
+  s.files = Dir['lib/**/*.rb', 'license/**/*', '*']
   s.test_files = Dir['test/**/*.rb']
 
   s.add_dependency 'app_mode', '~> 1.0.0'
