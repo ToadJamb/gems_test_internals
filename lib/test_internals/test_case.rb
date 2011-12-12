@@ -34,8 +34,6 @@
 
 # Monkey patch Test::Unit::TestCase to make it do cool stuff.
 Test::Unit::TestCase.class_eval do
-  include TestInternals
-
   # Since this is in a class_eval, instance methods need to be wrapped up
   # in class_variable_set or ruby will throw warnings.
 
@@ -88,7 +86,7 @@ Test::Unit::TestCase.class_eval do
       # We will only expose the methods we are responsible for creating.
       # (i.e. subtracting the superclass's private methods)
       expose_private_methods(:class,
-        @class.private_methods - 
+        @class.private_methods -
         @class.superclass.private_methods) if @expose_class_methods
 
       # Expose private instance methods.
@@ -295,7 +293,7 @@ Test::Unit::TestCase.class_eval do
       $stderr = @err
       yield
     rescue SystemExit
-      AppState.state = :dead
+      TestInternals::AppState.state = :dead
     ensure
       $stdout = STDOUT
       $stderr = STDERR
@@ -308,7 +306,7 @@ Test::Unit::TestCase.class_eval do
 
   # Set the application state to alive.
   def reset_app_state
-    AppState.state = :alive unless AppState.alive
+    TestInternals::AppState.state = :alive unless TestInternals::AppState.alive
   end
 
   # Resets the trace arrays.
@@ -464,7 +462,7 @@ Test::Unit::TestCase.class_eval do
 
     # Hold the state in a local variable so that the state can be reset
     # prior to the assertion.
-    alive = AppState.alive
+    alive = TestInternals::AppState.alive
 
     # Reset the application state so that later tests are not adversely
     # affected if this assertion fails, which otherwise could leave
@@ -482,7 +480,7 @@ Test::Unit::TestCase.class_eval do
 
     # Hold the state in a local variable so that the state can be reset
     # prior to the assertion.
-    dead = AppState.dead
+    dead = TestInternals::AppState.dead
 
     # Reset the application state so that later tests are not adversely
     # affected if this assertion fails, which otherwise could leave
