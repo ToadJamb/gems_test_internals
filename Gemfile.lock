@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    test_internals (2.0.1.dev)
+    test_internals (2.0.1)
       app_mode (~> 1.0.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    app_mode (1.0.2)
-    rake_tasks (2.0.3)
+    app_mode (1.0.3)
+    rake_tasks (2.0.4)
 
 PLATFORMS
   ruby
