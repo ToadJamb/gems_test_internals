@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'test_internals'
-  s.version = '2.0.0'
+  s.version = '2.0.1'
 
   s.summary     = 'Allows tests to check the stack trace, ' +
     'parameters, private methods, and class variables.'
