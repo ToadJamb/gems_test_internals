@@ -13,7 +13,7 @@ parameters were sent to a method. This results in cotton candy goodness for all.
 
 2. Require the gem in your Gemfile:
 
-    gem 'test_internals', '~> 1.0.0'
+    gem 'test_internals', '~> 2.0.0'
 
 3. Require the gem wherever you need to use it:
 
