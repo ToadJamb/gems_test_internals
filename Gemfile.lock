@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     test_internals (2.0.1)
-      app_mode (~> 1.0.0)
+      app_mode (~> 1.0.3)
 
 GEM
   remote: http://rubygems.org/
@@ -14,5 +14,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rake_tasks (~> 2.0.0)
+  rake_tasks (~> 2.0.4)
   test_internals!

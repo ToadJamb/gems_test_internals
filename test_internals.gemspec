@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'test_internals'
-  s.version = '2.0.1'
+  s.version = '2.0.2'
 
   s.summary     = 'Allows tests to check the stack trace, ' +
     'parameters, private methods, and class variables.'
@@ -21,12 +21,12 @@ parameters were sent to a method. This results in cotton candy goodness for all.
   s.extra_rdoc_files << 'README'
 
   s.require_paths = ['lib']
-  s.files = Dir['lib/**/*.rb', 'license/**/*', '*']
+  s.files = Dir['lib/**/*.rb', 'license/**/*', '*'] - Dir['Gemfile.lock']
   s.test_files = Dir['test/**/*.rb']
 
-  s.add_dependency 'app_mode', '~> 1.0.0'
+  s.add_dependency 'app_mode', '~> 1.0.3'
 
-  s.add_development_dependency 'rake_tasks', '~> 2.0.0'
+  s.add_development_dependency 'rake_tasks', '~> 2.0.4'
 
   s.has_rdoc = true
 end
